@@ -1,0 +1,431 @@
+mySQLexamples1a
+stored in C:\Users\h19sl\Documents\1mysql1a\extraFiles1mysql1a\extraFilesText1mysql1a
+6:15 PM 6/2/2022
+
+
+
+
+==  6:15 PM 6/2/2022 ====+++++++==============
+CREATE TABLE `lchannahm2022`.`lc2022jun1a` (
+  `SerialNum` INT NOT NULL,
+  `StudentName` VARCHAR(45) NULL,
+  `StudentAge` VARCHAR(45) NULL,
+  PRIMARY KEY (`SerialNum`))
+COMMENT = 'My first MySQL experiment\n';
+
+========+++++++++============
+
+
+
+
+7:23 PM 6/2/2022
+CREATE TABLE movies (
+   movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+   title VARCHAR(120),
+   year_released INTEGER,
+   director VARCHAR(80)
+);
+
+CREATE TABLE directors (
+   director_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+   first_name VARCHAR(40),
+   last_name VARCHAR(40),
+   country VARCHAR(80)
+);
+DROP TABLE movies;
+CREATE TABLE movies (
+   movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+   title VARCHAR(120),
+   year_released INTEGER,
+   director_id INTEGER,
+   FOREIGN KEY (director_id) REFERENCES directors(director_id)
+);
+INSERT INTO directors (first_name, last_name, country)
+VALUES ("John", "Lasseter", "USA");
+
+INSERT INTO directors (first_name, last_name, country)
+VALUES ("Brad", "Bird", "USA");
+
+INSERT INTO directors (first_name, last_name, country)
+VALUES ("Jodie", "Foster", "USA"); 
+
+INSERT INTO directors (first_name, last_name, country)
+VALUES ("Ang", "Lee", "Taiwan"); 
+
+insert into directors (first_name, last_name, country)
+values ("Alfonso", "Cuarón", "Mexico");
+
+insert into directors (first_name, last_name, country)
+values ("Guillermo", "del Toro", "Mexico");
+
+insert into directors (first_name, last_name, country)
+values ("Peter", "Jackson", "New Zealand");
+
+insert into directors (first_name, last_name, country)
+values ("Ava", "DuVernay", "USA");
+
+insert into directors (first_name, last_name, country)
+values ("Patty", "Jenkins", "USA");
+
+insert into directors (first_name, last_name, country)
+values ("Haifaa", "al-Mansour", "Saudi Arabia");
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Toy Story", 1995, 1);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("The Incredibles", 2004, 2);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Money Monster", 2016, 3);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("A Bug's Life", 1998, 1);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Crouching Tiger, Hidden Dragon", 2000, 4);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Harry Potter and the Prisoner of Azkaban", 2004, 5);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Little Man Tate", 1991, 3);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Roma", 2018, 5);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("The Perfect Candidate", 2019, 10);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("The Shape of Water", 2017, 6);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("The Lord of the Rings: The Return of the King", 2003, 7);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("A Wrinke in Time", 2018, 8);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Wonder Woman", 2017, 9);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Ratatouille", 2007, 2);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Mary Shelley", 2017, 10);
+
+INSERT INTO movies (title, year_released, director_id)
+VALUES ("Selma", 2014, 8);
+INSERT INTO movies (movie_id,title,year_released,
+   director_id)
+VALUES (1, "Sound of music", 1970,1);
+SELECT * FROM movies;
+
+=========++++++++++========
+
+7:38 PM 6/2/2022
+
+ movie_id , title ,
+   year_released ,
+   director_id
+
+=====++++++++++================
+8:04 PM 6/2/2022
+I created movies and directors in the correct schema
+ movie-buff;
+
+select * from movies;
+1	Toy Story	1995	1
+2	The Incredibles	2004	2
+3	Money Monster	2016	3
+4	A Bug's Life	1998	1
+5	Crouching Tiger, Hidden Dragon	2000	4
+6	Harry Potter and the Prisoner of Azkaban	2004	5
+7	Little Man Tate	1991	3
+8	Roma	2018	5
+9	The Perfect Candidate	2019	10
+10	The Shape of Water	2017	6
+11	The Lord of the Rings: The Return of the King	2003	7
+12	A Wrinke in Time	2018	8
+13	Wonder Woman	2017	9
+14	Ratatouille	2007	2
+15	Mary Shelley	2017	10
+16	Selma	2014	8
+			======================++++++++++++++++=====
+
+
+select * from directors;
+1	John	Lasseter	USA
+2	Brad	Bird	USA
+3	Jodie	Foster	USA
+4	Ang	Lee	Taiwan
+5	Alfonso	Cuarón	Mexico
+6	Guillermo	del Toro	Mexico
+7	Peter	Jackson	New Zealand
+8	Ava	DuVernay	USA
+9	Patty	Jenkins	USA
+10	Haifaa	al-Mansour	Saudi Arabia
+			
+=========++++===============
+STUDIO 1.5.2.1 Movie SQLs
+
+1.5.2.1. Task List
+Open up a new Query tab in MySQL Workbench. In that tab, write the SQL commands to carry out each of the queries described below. As you complete each step, compare your SQL code and the output with a partner.
+
+1) List just the titles of all the movies in the database.
+
+
+select title from movies;
+Toy Story
+The Incredibles
+Money Monster
+A Bug's Life
+Crouching Tiger, Hidden Dragon
+Harry Potter and the Prisoner of Azkaban
+Little Man Tate
+Roma
+The Perfect Candidate
+The Shape of Water
+The Lord of the Rings: The Return of the King
+A Wrinke in Time
+Wonder Woman
+Ratatouille
+Mary Shelley
+Selma
+========+++++================
+
+2) List the title and year of each movie in the database in
+ DESCENDING order of the year released. (Hint: Combine the
+ SELECT command with the ORDER BY keywords).
+
+select title,year_released from movies ORDER BY 
+year_released DESC;
+
+
+The Perfect Candidate	2019
+Roma	2018
+A Wrinke in Time	2018
+The Shape of Water	2017
+Wonder Woman	2017
+Mary Shelley	2017
+Money Monster	2016
+Selma	2014
+Ratatouille	2007
+The Incredibles	2004
+Harry Potter and the Prisoner of Azkaban	2004
+The Lord of the Rings: The Return of the King	2003
+Crouching Tiger, Hidden Dragon	2000
+A Bug's Life	1998
+Toy Story	1995
+Little Man Tate	1991
+
+===========++++++++++++++============
+3)List all columns for all records of the directors table
+ in ASCENDING alphabetical order based on the director’s
+ country of origin.
+
+select * from directors order by country ASC;
+5	Alfonso	Cuarón	Mexico
+6	Guillermo	del Toro	Mexico
+7	Peter	Jackson	New Zealand
+10	Haifaa	al-Mansour	Saudi Arabia
+4	Ang	Lee	Taiwan
+1	John	Lasseter	USA
+2	Brad	Bird	USA
+3	Jodie	Foster	USA
+8	Ava	DuVernay	USA
+9	Patty	Jenkins	USA
+			..........................-.........
+select country,first_name,last_name,director_id from directors order by country ASC;
+
+Mexico	Alfonso	Cuarón	5
+Mexico	Guillermo	del Toro	6
+New Zealand	Peter	Jackson	7
+Saudi Arabia	Haifaa	al-Mansour	10
+Taiwan	Ang	Lee	4
+USA	John	Lasseter	1
+USA	Brad	Bird	2
+USA	Jodie	Foster	3
+USA	Ava	DuVernay	8
+USA	Patty	Jenkins	9
+			
+==========++++++++++==========
+4)ORDER BY can also consider multiple columns. List all
+ columns for all records of the directors table in 
+ASCENDING alphabetical order first by the director’s
+ country of origin and then by the director’s last name.
+
+select * from directors order by country ASC , 
+last_name ASC;
+
+5	Alfonso	Cuarón	Mexico
+6	Guillermo	del Toro	Mexico
+7	Peter	Jackson	New Zealand
+10	Haifaa	al-Mansour	Saudi Arabia
+4	Ang	Lee	Taiwan
+2	Brad	Bird	USA
+8	Ava	DuVernay	USA
+3	Jodie	Foster	USA
+9	Patty	Jenkins	USA
+1	John	Lasseter	USA
+			
+
+select * from directors order by last_name;
+10	Haifaa	al-Mansour	Saudi Arabia
+2	Brad	Bird	USA
+5	Alfonso	Cuarón	Mexico
+6	Guillermo	del Toro	Mexico
+8	Ava	DuVernay	USA
+3	Jodie	Foster	USA
+7	Peter	Jackson	New Zealand
+9	Patty	Jenkins	USA
+1	John	Lasseter	USA
+4	Ang	Lee	Taiwan
+			
+............-.................
+
+
+========+++++==============
+
+5)
+select country,first_name,last_name,director_id from directors order by country ASC;
+select * from directors order by country ASC , last_name ASC;
+select * from directors;
+insert into directors (first_name,last_name,country) values ("Rob","Reiner","USA");
+select * from directors;
+select last_name,director_id from directors where first_name ="Rob" and last_name="Reiner";
+7)
+select country,first_name,last_name,director_id from directors order by country ASC;
+select * from directors order by country ASC , last_name ASC;
+select * from directors;
+insert into directors (first_name,last_name,country) values ("Rob","Reiner","USA");
+select * from directors;
+select last_name,director_id from directors where first_name ="Rob" and last_name="Reiner";
+
+'1', 'Toy Story', '1995', '1'
+'2', 'The Incredibles', '2004', '2'
+'3', 'Money Monster', '2016', '3'
+'4', 'A Bug\'s Life', '1998', '1'
+'5', 'Crouching Tiger, Hidden Dragon', '2000', '4'
+'6', 'Harry Potter and the Prisoner of Azkaban', '2004', '5'
+'7', 'Little Man Tate', '1991', '3'
+'8', 'Roma', '2018', '5'
+'9', 'The Perfect Candidate', '2019', '10'
+'10', 'The Shape of Water', '2017', '6'
+'11', 'The Lord of the Rings: The Return of the King', '2003', '7'
+'12', 'A Wrinke in Time', '2018', '8'
+'13', 'Wonder Woman', '2017', '9'
+'14', 'Ratatouille', '2007', '2'
+'15', 'Mary Shelley', '2017', '10'
+'16', 'Selma', '2014', '8'
+
+AFTER insert :
+1	Toy Story	1995	1
+2	The Incredibles	2004	2
+3	Money Monster	2016	3
+4	A Bug's Life	1998	1
+5	Crouching Tiger, Hidden Dragon	2000	4
+6	Harry Potter and the Prisoner of Azkaban	2004	5
+7	Little Man Tate	1991	3
+8	Roma	2018	5
+9	The Perfect Candidate	2019	10
+10	The Shape of Water	2017	6
+11	The Lord of the Rings: The Return of the King	2003	7
+12	A Wrinke in Time	2018	8
+13	Wonder Woman	2017	9
+14	Ratatouille	2007	2
+15	Mary Shelley	2017	10
+16	Selma	2014	8
+17	The Princess Bride	1987	13
+
+
+==============++++++++++============
+8). Use an INNER JOIN in your SQL command to display a list of movie titles, years released, and director last names.
+
+
+select movies.title,movies.year_released,directors.last_name
+from movies inner join directors on movies.director_id = directors.director_id 
+order by last_name ASC; 
+
+
+
+The Perfect Candidate	2019	al-Mansour
+Mary Shelley	2017	al-Mansour
+The Incredibles	2004	Bird
+Ratatouille	2007	Bird
+Harry Potter and the Prisoner of Azkaban	2004	Cuarón
+Roma	2018	Cuarón
+The Shape of Water	2017	del Toro
+A Wrinke in Time	2018	DuVernay
+Selma	2014	DuVernay
+Money Monster	2016	Foster
+Little Man Tate	1991	Foster
+The Lord of the Rings: The Return of the King	2003	Jackson
+Wonder Woman	2017	Jenkins
+Toy Story	1995	Lasseter
+A Bug's Life	1998	Lasseter
+Crouching Tiger, Hidden Dragon	2000	Lee
+The Princess Bride	1987	Reiner
+
+
+===========++++++++++================
+9)
+
+select movies.title,directors.first_name,directors.last_name
+from movies inner join directors on movies.director_id = directors.director_id 
+order by last_name ASC; 
+The Perfect Candidate	Haifaa	al-Mansour
+Mary Shelley	Haifaa	al-Mansour
+The Incredibles	Brad	Bird
+Ratatouille	Brad	Bird
+Harry Potter and the Prisoner of Azkaban	Alfonso	Cuarón
+Roma	Alfonso	Cuarón
+The Shape of Water	Guillermo	del Toro
+A Wrinke in Time	Ava	DuVernay
+Selma	Ava	DuVernay
+Money Monster	Jodie	Foster
+Little Man Tate	Jodie	Foster
+The Lord of the Rings: The Return of the King	Peter	Jackson
+Wonder Woman	Patty	Jenkins
+Toy Story	John	Lasseter
+A Bug's Life	John	Lasseter
+Crouching Tiger, Hidden Dragon	Ang	Lee
+The Princess Bride	Rob	Reiner
+
+
+=================++++++++===============
+
+
+11)
+
+select last_name, country
+from directors
+inner join movies 
+on movies.director_id=directors.director_id
+where movies.title = "Roma";
+Cuaro`n  Mexico
+
+===========++++++++++++++++=====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
